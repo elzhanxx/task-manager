@@ -40,15 +40,18 @@ public class TaskManager {
     }
 
     public void createEpic(Epic epic) {
-        // по аналогии как и с createTask
+        epic.setId(getUniqueId());
+        tasks.put(epic.getId(), epic);
     }
 
     public Epic getEpicById(int id) {
         // по аналогии как и с getTaskById
+        return epics.get(id);
     }
 
     public ArrayList<Epic> getAllEpics() {
         // по аналогии как и с getAllTasks
+        return new ArrayList<>(epics.values());
     }
 
     public void deleteEpicById(int id) {
@@ -62,10 +65,12 @@ public class TaskManager {
 
     public Subtask getSubtaskById(int id) {
         // по аналогии как и с getTaskById
+        return subtasks.get(id);
     }
 
     public ArrayList<Subtask> getAllSubtasks() {
         // по аналогии как и с getAllTasks
+        return new ArrayList<>(subtasks.values());
     }
 
     public void deleteSubtaskById(int id) {
@@ -81,5 +86,8 @@ public class TaskManager {
 
     private int getUniqueId() {
         return counter++;
+    }
+
+    public void updateSubtask(Subtask subtask) {
     }
 }
