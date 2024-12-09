@@ -43,11 +43,14 @@ public class Main {
 
         System.out.println("Статус эпика1 после обновлений: " + epic1.getStatus());
 
+        epic1.setTitle("Что-то новое");
         subtask2.setStatus(TaskStatus.DONE);
         manager.updateSubtask(subtask2);
-        System.out.println("Статус эпика1 после обновлений: " + epic1.getStatus());
+        System.out.println("\nСтатус эпика1 после обновлений: " + epic1.getStatus());
+        System.out.println("\nНазвание эпика1 после обновления: " + epic1.getTitle() );
 
         manager.deleteTaskById(task1.getId());
+        manager.deleteSubtaskById(subtask2.getId());
         manager.deleteEpicById(epic1.getId());
     }
     private static void printTasks(TaskManager manager) {
