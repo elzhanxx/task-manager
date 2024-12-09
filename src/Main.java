@@ -49,6 +49,9 @@ public class Main {
         System.out.println("\nСтатус эпика1 после обновлений: " + epic1.getStatus());
         System.out.println("\nНазвание эпика1 после обновления: " + epic1.getTitle() );
 
+        manager.getTaskById(4);
+        manager.getEpicById(6);
+        manager.getSubtaskById(7);
         manager.deleteTaskById(task1.getId());
         manager.deleteSubtaskById(subtask2.getId());
         manager.deleteEpicById(epic1.getId());
